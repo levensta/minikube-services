@@ -1,0 +1,11 @@
+minikube start --vm-driver=virtualbox --disk-size=4608
+eval $(minikube docker-env)
+
+kubectl delete pods name // перед перезапуском пода, надо удалить
+kubectl apply -f name.yaml
+
+kubectl get pods // посмотреть свои поды
+
+// для поиска ошибок
+kubectl logs name
+kubectl describe pods name
