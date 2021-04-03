@@ -1,1 +1,4 @@
 .DS_Store
+help.txt
+srcs/nginx/src/config.inc.php
+srcs/nginx/src/wp-config.php
