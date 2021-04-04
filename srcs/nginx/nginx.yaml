@@ -18,21 +18,6 @@ spec:
     app: nginx
   type: LoadBalancer
 ---
-apiVersion: v1
-kind: Pod
-metadata:
-  name: nginx
-  labels:
-    app: nginx
-spec:
-  containers:
-  - name: nginx
-    image: nginx_image
-    imagePullPolicy: Never
-    ports:
-      - containerPort: 80
-      - containerPort: 443
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
