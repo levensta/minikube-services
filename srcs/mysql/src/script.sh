@@ -1,5 +1,5 @@
-mv /server/mysql.cnf /etc/mysql/
-chmod 777 /etc/mysql/mysql.cnf
+mv /server/my.cnf /etc/mysql/
+chmod 777 /etc/mysql/my.cnf
 
 openrc default
 /etc/init.d/mariadb setup
@@ -11,4 +11,3 @@ mariadb -e "GRANT ALL PRIVILEGES ON wordpress.* TO 'root'@'%' WITH GRANT OPTION;
 mariadb -e "FLUSH PRIVILEGES;" -u root
 
 mysqld_safe --data='/var/lib/mysql'
-# bash

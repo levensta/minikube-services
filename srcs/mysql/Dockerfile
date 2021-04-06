@@ -12,6 +12,4 @@ VOLUME [ "/sys/fs/cgroup" ]
 CMD bash /server/script.sh
 
 # docker build -t mysql_image ./srcs/mysql/
-# docker run -it -p 80:80 -p 443:443 --name mysql_container --rm mysql_image
-# --no-cache ??
-# --allow-untrusted ??
+# docker run -it -p 3306:3306 --name mysql_container --rm mysql_image
