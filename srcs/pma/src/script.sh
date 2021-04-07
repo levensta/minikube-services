@@ -5,7 +5,7 @@ mkdir -p /var/log/supervisor
 # rm /etc/nginx/conf.d/*
 mv /server/pma_nginx.conf /etc/nginx/conf.d/
 
-chmod -R 755 /var/www/*
+chmod -R 777 /var/www/*
 wget https://files.phpmyadmin.net/phpMyAdmin/5.0.3/phpMyAdmin-5.0.3-all-languages.tar.gz
 tar -xzf phpMyAdmin-5.0.3-all-languages.tar.gz
 rm -rf phpMyAdmin-5.0.3-all-languages.tar.gz
