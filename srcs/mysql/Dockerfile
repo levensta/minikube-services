@@ -1,4 +1,4 @@
-FROM alpine:3.12
+FROM alpine:3.7
 LABEL info="by levensta for services"
 RUN apk update && apk upgrade && apk add bash mysql mysql-client openrc
 

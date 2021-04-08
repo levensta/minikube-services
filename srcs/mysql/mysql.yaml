@@ -13,8 +13,6 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  annotations:
-    metallb.universe.tf/allow-shared-ip: minikube
   name: mysql-svc
   labels:
     app: mysql
