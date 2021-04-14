@@ -18,6 +18,6 @@ mkdir -p /var/log/supervisor
 mv /server/supervisord.conf /etc/supervisord.conf
 cd /
 ./usr/bin/telegraf -sample-config --input-filter docker --output-filter influxdb > etc/telegraf/telegraf.conf
-# /usr/bin/supervisord -c /etc/supervisord.conf
+/usr/bin/supervisord -c /etc/supervisord.conf
 
 # bash

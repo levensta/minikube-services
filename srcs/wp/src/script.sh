@@ -9,3 +9,4 @@ tar -xzf latest.tar.gz -C /var/www/
 mv /server/wp-config.php /var/www/wordpress/
 
 mv /server/supervisord.conf /etc/supervisord.conf
+/usr/bin/supervisord -c /etc/supervisord.conf

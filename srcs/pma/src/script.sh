@@ -14,6 +14,7 @@ mv /server/config.inc.php /var/www/phpmyadmin/
 echo "[ ok ] phpMyAdmin succesfully installed"
 
 mv /server/supervisord.conf /etc/supervisord.conf
+/usr/bin/supervisord -c /etc/supervisord.conf
 
 # bash
 

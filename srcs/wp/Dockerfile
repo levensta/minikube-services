@@ -7,8 +7,7 @@ EXPOSE 5050
 
 COPY ./src/* /server/
 
-RUN bash /server/script.sh
-CMD ["/usr/bin/supervisord"]
+CMD bash /server/script.sh
 
 # docker build -t wp_image ./srcs/wp/
 # docker run -it -p 5000:5000 --name wp_container --rm wp_image

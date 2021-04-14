@@ -7,8 +7,7 @@ EXPOSE 5000
 
 COPY ./src/* /server/
 
-RUN bash /server/script.sh
-CMD ["/usr/bin/supervisord"]
+CMD bash /server/script.sh
 
 # docker build -t pma_image ./srcs/pma/
 # docker run -it -p 5000:5000 --name pma_container --rm pma_image
