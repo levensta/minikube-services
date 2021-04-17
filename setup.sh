@@ -18,3 +18,5 @@ docker build -t influxdb_image ./srcs/influxdb/
 kubectl apply -f ./srcs/influxdb/influxdb.yaml
 docker build -t grafana_image ./srcs/grafana/
 kubectl apply -f ./srcs/grafana/grafana.yaml
+docker build -t ftps_image ./srcs/ftps/
+kubectl apply -f ./srcs/ftps/ftps.yaml

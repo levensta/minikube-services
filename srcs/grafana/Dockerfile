@@ -11,3 +11,4 @@ CMD bash /server/script.sh
 
 # docker build -t grafana_image ./srcs/grafana/
 # docker run -it -p 3000:3000 --name grafana_container --rm grafana_image
+# kubectl cp grafana-deployment-6ccdf5bbbf-bk6mv:/grafana-7.5.4/data/grafana.db grafana.db
