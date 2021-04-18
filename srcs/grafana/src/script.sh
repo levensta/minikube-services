@@ -5,6 +5,8 @@ apk add glibc-2.33-r0.apk
 wget https://dl.grafana.com/oss/release/grafana-7.5.4.linux-amd64.tar.gz
 tar -xzf grafana-7.5.4.linux-amd64.tar.gz
 rm -rf grafana-7.5.4.linux-amd64.tar.gz
+
+mkdir /grafana-7.5.4/data/
 mv /server/grafana.db /grafana-7.5.4/data/grafana.db
 
 cd /grafana-7.5.4/bin/
