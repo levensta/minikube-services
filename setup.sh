@@ -5,6 +5,8 @@ docker pull metallb/speaker:v0.8.2
 docker pull metallb/controller:v0.8.2
 minikube addons enable metallb
 kubectl apply -f ./srcs/configmap.yaml
+# kubectl apply -f ./srcs/influxdb/influxdb-config.yaml
+# kubectl apply -f ./srcs/volumes.yaml
 
 docker build -t nginx_image ./srcs/nginx
 kubectl apply -f ./srcs/nginx/nginx.yaml

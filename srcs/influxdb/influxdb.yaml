@@ -1,4 +1,16 @@
 apiVersion: v1
+kind: Secret
+metadata:
+  labels:
+    app: influxdb
+  name: influxdb-secret
+type: Opaque
+stringData:
+  INFLUX_URL: http://influxdb-svc:8086
+  INFLUX_USER: admin
+  INFLUX_PASSWORD: admin
+---
+apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: influxdb-pv-claim
@@ -10,7 +22,7 @@ spec:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 2Gi
+      storage: 1Gi
 ---
 apiVersion: v1
 kind: PersistentVolume
@@ -21,9 +33,10 @@ metadata:
 spec:
   storageClassName: influxdb
   capacity:
-    storage: 2Gi
+    storage: 1Gi
   accessModes:
     - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Recycle
   hostPath:
     path: "/var/lib/influxdb"
 ---
