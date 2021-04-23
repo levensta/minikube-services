@@ -38,7 +38,7 @@ spec:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Recycle
   hostPath:
-    path: "/var/lib/influxdb"
+    path: "/root/.influxdb"
 ---
 apiVersion: v1
 kind: Service
@@ -80,7 +80,7 @@ spec:
           name: influxdb
         volumeMounts:
         - name: influxdb-persistent-storage
-          mountPath: /var/lib/influxdb
+          mountPath: /root/.influxdb
         - name: dockersock
           mountPath: /var/run/docker.sock
       volumes:

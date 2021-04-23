@@ -1,5 +1,5 @@
 cd server
-apk add influxdb
+apk add influxdb --repository=http://dl-cdn.alpinelinux.org/alpine/v3.10/community/
 wget -q -O /etc/apk/keys/sgerrand.rsa.pub https://alpine-pkgs.sgerrand.com/sgerrand.rsa.pub
 wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.33-r0/glibc-2.33-r0.apk
 apk add glibc-2.33-r0.apk
@@ -22,3 +22,4 @@ cd /
 
 # bash
 # influxd run -config /etc/influxdb.conf
+# /etc/influxdb/influxd

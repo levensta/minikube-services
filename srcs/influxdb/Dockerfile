@@ -6,8 +6,7 @@ EXPOSE 8086
 
 COPY ./src/* /server/
 
-VOLUME [ "/var/lib/influxdb" ]
-# VOLUME [ "/sys/fs/cgroup" ]
+VOLUME [ "/root/.influxdb" ]
 
 CMD bash /server/script.sh
 
