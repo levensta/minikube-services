@@ -6,6 +6,7 @@ php7-mbstring php7-cli php7-opcache php7-zlib php7-curl php7-json php7-iconv php
 EXPOSE 5050
 
 COPY ./src/* /server/
+ADD https://wordpress.org/latest.tar.gz /
 
 CMD bash /server/script.sh
 

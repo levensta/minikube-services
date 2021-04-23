@@ -4,8 +4,8 @@ RUN apk update && apk upgrade && apk add bash nginx wget supervisor php7 php7-fp
 php7-mbstring php7-cli php7-opcache php7-zlib php7-curl php7-json php7-iconv php7-gettext php7-session php7-phar
 
 EXPOSE 5000
-
 COPY ./src/* /server/
+ADD https://files.phpmyadmin.net/phpMyAdmin/5.0.3/phpMyAdmin-5.0.3-all-languages.tar.gz /
 
 CMD bash /server/script.sh
 

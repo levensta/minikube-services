@@ -5,7 +5,7 @@ wget https://github.com/sgerrand/alpine-pkg-glibc/releases/download/2.33-r0/glib
 apk add glibc-2.33-r0.apk
 
 # wget https://dl.influxdata.com/influxdb/releases/influxdb2-2.0.4-linux-amd64.tar.gz
-wget https://dl.influxdata.com/telegraf/releases/telegraf-1.18.1_linux_amd64.tar.gz
+# wget https://dl.influxdata.com/telegraf/releases/telegraf-1.18.1_linux_amd64.tar.gz #replaced to ADD
 tar xf telegraf-1.18.1_linux_amd64.tar.gz
 # tar xzf influxdb2-2.0.4-linux-amd64.tar.gz
 # rm -rf influxdb2-2.0.4-linux-amd64.tar.gz

@@ -5,6 +5,7 @@ RUN apk update && apk upgrade && apk add bash wget supervisor
 EXPOSE 8086
 
 COPY ./src/* /server/
+ADD https://dl.influxdata.com/telegraf/releases/telegraf-1.18.1_linux_amd64.tar.gz /server/
 
 VOLUME [ "/root/.influxdb" ]
 

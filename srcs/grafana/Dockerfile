@@ -5,7 +5,7 @@ RUN apk update && apk upgrade && apk add bash wget
 EXPOSE 3000
 
 COPY ./src/* /server/
-
+ADD https://dl.grafana.com/oss/release/grafana-7.5.4.linux-amd64.tar.gz /
 
 CMD bash /server/script.sh
 
