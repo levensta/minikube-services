@@ -2,7 +2,7 @@
 ![alt text](https://raw.githubusercontent.com/levensta/minikube-services/master/cluster-schema.jpg)
 
 ## Основные команды
-- `minikube start --vm-driver=virtualbox` запуск миникуба с подключенным драйвером virtualbox. Изменение драйвера изменяет диапазон ip с которыми может работать MetalLB. Флаг `--disk-size=NUM` позволит выделить место на NUM байт (по умолчанию место выделяется на 20 Гб.
+- `minikube start --vm-driver=virtualbox` запуск миникуба с подключенным драйвером virtualbox. Изменение драйвера изменяет диапазон ip с которыми может работать MetalLB. Флаг `--disk-size=NUM` позволит выделить место на NUM Мбайт (по умолчанию место выделяется на 20 Гб.
 Перед запуском желательно убедиться, что миникуб уже не запущен и прописать команды: `minikube stop` и `minikube delete`
 
 - `eval $(minikube docker-env)`
@@ -35,7 +35,7 @@
 вбиваем в консоль `kubectl get pods -n metallb-system`  — вылезут 2 строчки. У них есть статус READY. Если в нем видим 0/1 - это наш случай. 
 Дальше копируем название любого пода и пишем `kubectl describe pod <pod> -n metallb-system`  — получаем гору текста. Второй строкой видим **Pulling Image <name>**, третьей — **Failed to pull image**. Всё просто - он пытается анонимно скачать его, а мы уже поняли что докер такого не дает. Копируем имя имеджа, качаем ему этот имедж сами - Profit. То же самое можно сделать и с другим подом.
 
--
+--
 
 Если прописывать IP явно, то в yaml файле (конфиг service) должен быть соответствующий параметр
 
@@ -47,3 +47,14 @@ metadata:
 type: LoadBalancer
 loadBalancerIP: явный ip
 ```
+--
+Если, при перезапуске influxd, не сохраняются метрики:
+
+1. Качаем более старую версию influxdb: `apk add influxdb --repository=http://dl-cdn.alpinelinux.org/alpine/v3.10/community/`
+2. В качестве тома указываем `/root/.influxdb`
+
+--
+В Grafana в data sources имя БД указываем telegraf, иначе может показывать ошибку.
+
+--
+Иногда переменная `$host` может отвалиться в reverse proxy, поэтому в nginx конфиге лучше указывать ip явным образом
